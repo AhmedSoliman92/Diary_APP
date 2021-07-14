@@ -1,0 +1,19 @@
+{% extends '_partials/base.html' %}
+    {% block content %}
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">ADD NEW DIARY</h2>
+                    <h3 class="section-subheading text-muted">The time will be added automaticaly</h3>
+                </div>
+                
+                        <form action="{% url 'add' %}" method="POST">
+                            {% csrf_token %}
+                            {{form.diary_msg}}
+                            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+                        </form>
+            </div>
+        </section>
+    {% endblock %}
+        
+        
